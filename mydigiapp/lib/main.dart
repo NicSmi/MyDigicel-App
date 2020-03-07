@@ -57,48 +57,56 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               ),
               ListTile(
+                leading: Icon(Icons.settings),
                 title: Text('Settings',style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold ),),
                 onTap: (){
 
                 },
               ),
               ListTile(
-                title: Text('Tutorial'),
+                leading: Icon(Icons.book),
+                title: Text('Tutorial',style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold ),),
                 onTap: (){
 
                 },
               ),
               ListTile(
-                title: Text('Shake It'),
+                leading: Icon(Icons.vibration),
+                title: Text('Shake It',style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold ),),
                 onTap: (){
 
                 },
               ),
               ListTile(
-                title: Text('Account & Balances'),
+                leading: Icon(Icons.phone_android),
+                title: Text('Account & Balances',style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold ),),
                 onTap: (){
 
                 },
               ),
               ListTile(
-                title: Text('Offers for You'),
+                leading: Icon(Icons.card_giftcard),
+                title: Text('Offers for You',style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold ),),
                 onTap: (){
 
                 }
               ),
               ListTile(
-                title: Text('Shared Data'),
+                leading: Icon(Icons.data_usage),
+                title: Text('Shared Data',style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold ),),
                 onTap: (){
 
               },),
               ListTile(
-                title: Text('Games & More'),
+                leading: Icon(Icons.add_circle_outline),
+                title: Text('Games & More',style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold ),),
                 onTap: (){
 
                 }
               ),
               ListTile(
-                title: Text('Additional Services'),
+                leading: Icon(Icons.card_membership),
+                title: Text('Additional Services',style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold ),),
                 onTap: (){
 
                 }
