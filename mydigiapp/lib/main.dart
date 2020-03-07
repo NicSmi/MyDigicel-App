@@ -20,6 +20,9 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.red,
+        highlightColor: Colors.redAccent,
+        primaryColor: Colors.red,
+        splashColor: Colors.redAccent,
       ),
       home: MyHomePage(title: 'MyDigicel'),
     );
@@ -35,17 +38,53 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  //int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  // void _incrementCounter() {
+  //   setState(() {
+  //     _counter++;
+  //   });
+  // }
+
+  var _curIndex = 2;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(child: BottomNavigationBar(items:[
+        BottomNavigationBarItem(
+          title: Text('Plans', style: TextStyle(fontSize: 9.0),),
+          icon: Icon(Icons.apps),
+          //backgroundColor: Colors.red
+        ),
+        BottomNavigationBarItem(
+          title: Text('Top Up',style: TextStyle(fontSize: 9.0),),
+          icon: Icon(Icons.monetization_on),
+          //backgroundColor: Colors.red
+        ),
+        BottomNavigationBarItem(
+          title: Text('Home',style: TextStyle(fontSize: 11.0),),
+          icon: Icon(Icons.home, size:45.0,),
+        ),
+        BottomNavigationBarItem(
+          title: Text('Bills & Activity', style: TextStyle(fontSize: 9.0),),
+          icon: Icon(Icons.list),
+          //backgroundColor: Colors.red
+        ),
+        BottomNavigationBarItem(
+          title: Text('Support',style: TextStyle(fontSize: 9.0),),
+          icon: Icon(Icons.headset_mic),
+          //backgroundColor: Colors.red
+        )
+      ],
+      type: BottomNavigationBarType.fixed ,
+      currentIndex: _curIndex,
+      onTap: (index){
+        setState(() {
+          _curIndex = index;
+        });
+      },),),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -53,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
             DrawerHeader(
               child: Text('Nicoy Smith'),
               decoration: BoxDecoration(
-                color: Colors.redAccent,
+                color: Colors.white,
               ),
               ),
               ListTile(
@@ -115,28 +154,21 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      appBar: AppBar(
+      appBar: AppBar(elevation: 0.0,
+        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: Colors.white,
         //backgroundColor: Colors.white,
-        title: Text(widget.title),
+        title: Text(widget.title, style: TextStyle(color: Colors.red),),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
+              'DigiApp',
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
       ),
     );
   }
